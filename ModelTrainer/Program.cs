@@ -57,7 +57,7 @@ namespace ModelTrainer
             mlContext.Model.Save(model, data.Schema, modelFile);
 
             //Save model as ONNX
-            using (var onnx = File.Open(modelFile, FileMode.OpenOrCreate))
+            using (var onnx = File.Open(modelonnx, FileMode.OpenOrCreate))
             {
                 mlContext.Model.ConvertToOnnx(model, data, onnx);
             }
